@@ -1,9 +1,11 @@
 # Astro Starter Kit: Minimal
-# Pagina de SpaceX
 
 ```sh
 npm create astro@latest -- --template minimal
 ```
+
+Vista la pagina [[SpaceX-davisJ](https://guileless-capybara-385e75.netlify.app/)] 
+
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
 [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
