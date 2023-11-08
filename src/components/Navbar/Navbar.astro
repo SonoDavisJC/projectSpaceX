@@ -1,0 +1,78 @@
+---
+import './style.css'
+
+---
+
+<nav class="nav" id="navbar">
+    <div class="logo">
+        SPACE X
+    </div>
+    <div class="nav-options">
+        <ul>
+            <li>FALCON 9</li>
+            <li>FALCON HEAVY</li>
+            <li>DRAGON</li>
+            <li>STARSHIP</li>
+            <li>HUMAN SPACELIGHT</li>
+            <li>RIDESHARE</li>
+            <li>STARTSHIELD</li>
+            <li>STARLINK</li>
+        </ul>  
+    </div>
+    <div class="nav-options">
+        <ul>
+            <li>SHOP</li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<script>
+
+const nav = document.querySelector('#navbar') as HTMLElement;
+const header = document.querySelector('#header') as HTMLElement;
+const menu = document.querySelector('.menu') as HTMLElement
+
+
+let scrollPos: number = 0;
+function detectScrollDirection() {
+  const currentScrollPos = window.scrollY;
+
+  if (currentScrollPos > scrollPos) {
+    //nav.style.display = 'none'
+    //header.style.backgroundColor = 'transparent'
+   
+    header.style.display = 'none';
+    //menu.style.display = 'none'
+  } else {
+    header.style.display = 'block';
+    //menu.style.display = 'flex'
+  }
+  scrollPos = currentScrollPos;
+}
+
+
+function detecteViewport() {
+  let {  scrollTop, clientHeight, scrollHeight  } = document.documentElement;
+  if(scrollTop >= clientHeight) {
+    header.style.display == 'none' ? null : header.classList.add('active')
+  }else {
+    header.style.display == 'none' ? null : header.classList.remove('active')
+  }
+}
+
+
+
+window.addEventListener('scroll', detectScrollDirection);
+window.addEventListener('scroll',detecteViewport)
+
+
+
+// Buena practica tener esta funcion para animaciones en nuestros proyectos web
+requestAnimationFrame(detectScrollDirection);
+requestAnimationFrame(detecteViewport)
+
+
+</script>
+

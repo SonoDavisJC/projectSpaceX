@@ -1,0 +1,45 @@
+---
+import './style.css'
+---
+<div class="sidebar" id="sidebar" >
+    <div class="content cerrado">
+            <ul class="options-sidebar">
+                <div class="options-mobile">
+                    <li><a>FALCON 9</a></li>
+                    <li><a>FALCON HEAVY</a></li>
+                    <li><a>DRAGON</a></li>
+                    <li><a>STARSHIP</a></li>
+                    <li><a>HUMAN SPACELIGHT</a></li>
+                    <li><a>RIDESHARE</a></li>
+                    <li><a>STARTSHIELD</a></li>
+                    <li><a>STARLINK</a></li>
+                </div>
+                <div class="options-desktop">
+                    <li><a>MISSION</a></li>
+                    <li><a>LAUNCHES</a></li>
+                    <li><a>CAREERS</a></li>
+                    <li><a>UPDATES</a></li>
+                    <li><a>SHOP</a></li>
+                </div>
+            </ul>
+    </div>
+</div>
+
+
+<script>
+
+const sidebar = document.getElementById('sidebar') as HTMLElement
+const sidebarContent = document.querySelector('.sidebar .content') as HTMLElement
+const btnMenu = document.getElementById('btnMenu') as HTMLElement;
+
+function detectScroll() {
+    const currentScrollPos = window.scrollY;
+    if (currentScrollPos > 0) {
+        sidebarContent.classList.replace('abierto','cerrado')
+        sidebar.classList.remove('active');
+        btnMenu.classList.replace('close','open')
+    };
+}
+window.addEventListener('scroll', detectScroll);
+
+</script>

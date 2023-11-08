@@ -1,0 +1,32 @@
+---
+import Layout from "../layout/Layout.astro"
+import Navbar from "../components/Navbar/Navbar.astro"
+
+import SidebarNav from "../components/SidebarNav/SidebarNav.astro"
+import MenuBar from '../components/MenuBar/MenuBar.astro'
+
+import Sections from "../components/Sections/Sections.astro"
+
+import "./index.css"
+
+---
+
+<Layout>
+	<header class="header closeAnimation" id="header">
+		<Navbar />
+		<MenuBar />
+		<SidebarNav />
+	</header>
+
+	<main>
+		<Sections />
+	</main>
+
+	<footer>
+		<ul>
+			<li>SPACEX © 2023</li>
+			<li><a>PRIVACY POLICY</a></li>
+			<li><a>SUPPLIERS</a></li>
+		</ul>
+	</footer>
+</Layout>

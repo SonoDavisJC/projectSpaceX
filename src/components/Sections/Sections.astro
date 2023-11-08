@@ -1,0 +1,46 @@
+---
+import data from '../../db/sections.json'
+import Section from './Section/Section.astro'
+
+console.log(data);
+---
+
+
+<div>
+    {
+        data.map((item, index) => {
+            return <Section 
+            id={`section-${index}`}
+            bg={item.bg} 
+            title={item.title} 
+            subtitle={item.subtitle} 
+            action={item.action}/>
+        })
+    }
+</div>
+
+<script>
+    const sections: NodeListOf<HTMLElement> = document.querySelectorAll('.section .content')
+    
+    let listCtopSections: number[] = []
+    for(const section of sections) {
+        listCtopSections.push(section.offsetTop + 100);
+    }
+
+    function animationTextSection() {
+
+        let {  scrollTop, clientHeight, scrollHeight  } = document.documentElement;
+
+        let count = 1; 
+        for (let index = 0; index < listCtopSections.length; index++) {
+            if(scrollTop > listCtopSections[index]) {
+                sections[count].classList.add('active')
+                count++
+            }
+        }
+    }
+
+    window.addEventListener('scroll',  animationTextSection)
+    requestAnimationFrame(animationTextSection);
+
+</script>

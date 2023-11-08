@@ -1,0 +1,48 @@
+---
+import './styleMenu.css'
+---
+
+
+<button class="menu open" id="btnMenu">
+    <div></div>
+    <div></div>
+    <div></div>
+</button>
+
+
+
+<script>import { fade } from "astro:transitions";
+
+    
+    const sidebar = document.getElementById('sidebar') as HTMLElement;
+    const sidebarContent = document.querySelector('.sidebar .content') as HTMLElement;
+    const btnMenu = document.getElementById('btnMenu') as HTMLElement; 
+
+
+    function showAndcloseSidebar(e: any) {
+
+        // SI SE TOCA EL SIDEBAR NO SE CIERRA
+        if(e.target == sidebarContent) {
+            return
+        }
+
+        // OPEN SIDEBAR
+        if(sidebar.classList.value.includes('active')) {
+            sidebar.classList.remove('active');
+            sidebarContent.classList.replace('abierto','cerrado')
+            btnMenu.classList.replace('close','open')
+            
+        }
+        // CLOSE SIDEBAR
+        else {
+            sidebar.classList.add('active'); 
+            sidebarContent.classList.replace('cerrado','abierto')
+            btnMenu.classList.replace('open','close')
+        }
+    }
+
+    btnMenu.addEventListener('click',(e) => showAndcloseSidebar(e));
+    sidebar.addEventListener('click',(e) => showAndcloseSidebar(e))
+
+
+</script>

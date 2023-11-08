@@ -1,0 +1,30 @@
+---
+interface Props {
+    id: string
+    bg: string
+    subtitle: string,
+    title: string,
+    action: string,
+}
+
+const {bg, action, subtitle, title, id} = Astro.props
+
+import './style.css'
+---
+
+<section style=`background-image: url(${bg})` class="section" id={id}>
+    <div class="content">
+        <h3 class="sub-title">{subtitle.toUpperCase()}</h3>
+        <h1>{title.toUpperCase()}</h1>
+        <button class="btn">{action.toUpperCase()}</button>
+    </div>
+    <div class="arrow">
+
+    </div>
+
+</section>
+
+ 
+<script>
+    
+</script>
